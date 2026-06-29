@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Utkarsh Somvanshi</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">US<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank">GitHub <i class="arrow">↗</i></a>
+</nav>
+
+<header class="page-header">
+  <p class="eyebrow">Selected work</p>
+  <h1>Five systems. Five real problems.<br>No tutorials, no templates.</h1>
+  <p class="page-sub">Each one shipped end to end — data, model, backend, and a UI someone could actually use. Filter by what you're looking for.</p>
+
+  <div class="filter-bar">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="vision">Computer vision</button>
+    <button class="filter-chip" data-filter="ml">Machine learning</button>
+    <button class="filter-chip" data-filter="fullstack">Full-stack</button>
+  </div>
+</header>
+
+<section class="project-grid">
+
+  <article class="project-card" data-reveal id="safevision" data-tags="vision fullstack">
+    <div class="project-visual visual-safevision">
+      <div class="mini-box mb-1"><span>helmet · 0.97</span></div>
+      <div class="mini-box mb-2 alt"><span>person · 0.99</span></div>
+    </div>
+    <div class="project-body">
+      <p class="project-eyebrow">01 — Currently in production testing</p>
+      <h2>SafeVision AI</h2>
+      <p class="project-tagline">Industrial safety compliance platform built to replace a paid vendor at AMNS.</p>
+      <p class="project-desc">A computer-vision system monitoring 10+ live cameras for PPE compliance — helmets, vests, restricted-zone breaches, and crowd density — with automated alerts and a full compliance dashboard. Trained 4+ YOLO models reaching up to 97% mAP50. Built to give AMNS more control and configurability than their existing third-party vendor offered, at no recurring license cost.</p>
+      <div class="project-stats">
+        <div><span>97%</span>mAP50</div>
+        <div><span>10+</span>cameras</div>
+        <div><span>5+</span>violation types</div>
+      </div>
+      <div class="project-stack">
+        <span>YOLO</span><span>FastAPI</span><span>PostgreSQL</span><span>React</span><span>WebSocket</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card" data-reveal id="moneymind" data-tags="ml fullstack">
+    <div class="project-visual visual-moneymind">
+      <div class="mm-card">Health Score<span>78/100</span></div>
+      <div class="mm-card mm-card-2">Tax Wizard<span>₹42,000 saved</span></div>
+    </div>
+    <div class="project-body">
+      <p class="project-eyebrow">02 — Personal project</p>
+      <h2>MoneyMind AI</h2>
+      <p class="project-tagline">A free, CA-level financial advisor for Indian investors.</p>
+      <p class="project-desc">Built solo — a financial guidance platform with a six-dimension Money Health Score, an Old-vs-New tax regime comparison engine, a Portfolio X-Ray computing true XIRR and fund overlap, and an LLM-powered chat advisor (Groq LLaMA 3.3 70B) for India-specific financial questions. Includes PDF parsing to auto-extract data from Form 16 and CAMS/KFintech statements.</p>
+      <div class="project-stats">
+        <div><span>6</span>health dimensions</div>
+        <div><span>5</span>core tools</div>
+        <div><span>70B</span>param LLM</div>
+      </div>
+      <div class="project-stack">
+        <span>React</span><span>FastAPI</span><span>Groq LLaMA 3.3</span><span>PyMuPDF</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card" data-reveal id="messdemand" data-tags="ml">
+    <div class="project-visual visual-mess">
+      <svg viewBox="0 0 200 100" class="mess-chart">
+        <polyline points="0,80 30,60 60,65 90,30 120,40 150,15 180,25 200,10" fill="none" stroke="#FF7A1A" stroke-width="2.5"/>
+      </svg>
+      <p class="mess-label">Demand forecast — Random Forest</p>
+    </div>
+    <div class="project-body">
+      <p class="project-eyebrow">03 — Solving a real campus problem</p>
+      <h2>Mess Demand &amp; Food Waste System</h2>
+      <p class="project-tagline">Predicting food waste before it happens.</p>
+      <p class="project-desc">An ML pipeline predicting university mess demand (Low/Medium/High) to cut food over-preparation and shortages. Benchmarked 6 classification models, with Random Forest performing best. Built automated retraining on a 100-record threshold, data drift detection (PSI, Chi-Square, Mean Shift), full model versioning via a JSON registry, and dual dashboards (React + Streamlit) with cost-impact estimation.</p>
+      <div class="project-stats">
+        <div><span>6</span>models benchmarked</div>
+        <div><span>3</span>drift detection methods</div>
+        <div><span>2</span>dashboards</div>
+      </div>
+      <div class="project-stack">
+        <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>FastAPI</span><span>React</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card" data-reveal id="finai" data-tags="ml fullstack">
+    <div class="project-visual visual-finai">
+      <div class="finai-gauge">
+        <svg viewBox="0 0 100 60">
+          <path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+          <path d="M10,55 A40,40 0 0,1 68,18" fill="none" stroke="#FF7A1A" stroke-width="8"/>
+        </svg>
+        <p>Rebalance Score: 64</p>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-eyebrow">04 — Personal project</p>
+      <h2>FinAI</h2>
+      <p class="project-tagline">Mutual fund portfolio rebalancing, scored and explained.</p>
+      <p class="project-desc">A platform computing a real-time Rebalance Score (0–100) from a weighted 5-factor model — portfolio drift, volatility, risk alignment, tax efficiency, and market momentum — fed into a Bayesian decision engine that classifies portfolios into Hold/Watch/Rebalance/Urgent zones. Includes a fund recommendation engine with STCG/LTCG tax-zone detection and an interactive what-if allocation simulator.</p>
+      <div class="project-stats">
+        <div><span>5</span>factor model</div>
+        <div><span>4</span>decision zones</div>
+        <div><span>0–100</span>score range</div>
+      </div>
+      <div class="project-stack">
+        <span>Python</span><span>FastAPI</span><span>React</span><span>Supabase</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card" data-reveal id="incident" data-tags="fullstack">
+    <div class="project-visual visual-incident">
+      <div class="inc-row"><span class="inc-dot red"></span>Reported</div>
+      <div class="inc-row"><span class="inc-dot amber"></span>In progress</div>
+      <div class="inc-row"><span class="inc-dot green"></span>Resolved</div>
+    </div>
+    <div class="project-body">
+      <p class="project-eyebrow">05 — Personal project</p>
+      <h2>Real-Time Incident Reporting System</h2>
+      <p class="project-tagline">A decoupled, deployed platform for tracking incidents as they happen.</p>
+      <p class="project-desc">Built the backend for a real-time incident reporting platform with role-based access — citizens report incidents, admins verify and track resolution. Designed REST APIs and a Supabase-backed data layer for incident creation, status updates, and verification. Deployed a fully decoupled frontend-backend architecture on Render, supporting concurrent users with persistent cloud storage.</p>
+      <div class="project-stats">
+        <div><span>2</span>user roles</div>
+        <div><span>3</span>status states</div>
+        <div><span>100%</span>deployed</div>
+      </div>
+      <div class="project-stack">
+        <span>Node.js</span><span>Express</span><span>React</span><span>Supabase</span><span>Render</span>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<section class="cta-section" data-reveal>
+  <h2>Want the full picture?</h2>
+  <p>Every repo is public, commit history and all.</p>
+  <a href="https://github.com/Utkarshsomvanshi45" class="btn-primary" target="_blank">Browse GitHub</a>
+</section>
+
+<footer class="footer">
+  <p>Utkarsh Somvanshi — built from scratch, no template.</p>
+  <div class="footer-links">
+    <a href="https://github.com/Utkarshsomvanshi45" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/utkarsh-somvanshi" target="_blank">LinkedIn</a>
+    <a href="mailto:somvanshiutkarsh7@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const chips = document.querySelectorAll('.filter-chip');
+  const cards = document.querySelectorAll('.project-card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.tags.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<script src="../js/interactions.js"></script>
+</body>
+</html>
