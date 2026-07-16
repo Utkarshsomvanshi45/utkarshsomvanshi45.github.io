@@ -8,107 +8,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body class="page-enter">
 <div class="grain"></div>
 
 <nav class="nav">
   <a href="../index.html" class="nav-logo">US<span class="dot">.</span></a>
   <div class="nav-links">
+    <a href="../index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
     <a href="resume.html" class="active">Resume</a>
     <a href="contact.html">Contact</a>
   </div>
-  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank">GitHub <i class="arrow">↗</i></a>
+  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank" rel="noreferrer">GitHub ↗</a>
 </nav>
 
-<header class="page-header">
-  <p class="eyebrow">Resume</p>
-  <h1>Everything on paper,<br>nothing inflated.</h1>
-  <p class="page-sub">Every metric below is one I can defend in an interview. Download the PDF for the formatted version.</p>
-  <a href="../assets/Utkarsh_Somvanshi_Resume.pdf" class="btn-primary" download>Download PDF ↓</a>
-</header>
+<div class="page-header">
+  <div class="label">Resume</div>
+  <h1>The short, scannable version.</h1>
+  <p class="page-sub">One page. Quietly opinionated formatting. Updated regularly.</p>
+</div>
 
-<section class="resume-body">
-
-  <div class="resume-section" data-reveal>
-    <h2>Experience</h2>
-
-    <div class="r-row">
-      <div class="r-row-head">
-        <h3>AI &amp; Computer Vision Engineer Intern</h3>
-        <span class="r-date">May 2026 — Present</span>
-      </div>
-      <p class="r-org">ArcelorMittal Nippon Steel India (AMNS) · On-site</p>
-      <ul>
-        <li>Built SafeVision AI, an in-house computer vision safety monitoring platform across 10+ AI cameras, currently in final testing to replace AMNS's third-party DARSA vendor system — eliminating recurring licensing costs</li>
-        <li>Trained 4+ YOLO-based object detection models for PPE compliance, achieving up to 97% mAP50 and 95%+ average precision/recall</li>
-        <li>Engineered real-time detection across 5+ violation types with automated alert generation, and a full-stack platform with WebSocket-based live updates</li>
-        <li>Designed broader system functionality and admin control than the incumbent vendor solution</li>
-      </ul>
-    </div>
-
-    <div class="r-row">
-      <div class="r-row-head">
-        <h3>Data Analytics Intern</h3>
-        <span class="r-date">Jan 2026 — Apr 2026</span>
-      </div>
-      <p class="r-org">Unified Mentor · Remote</p>
-      <ul>
-        <li>Delivered 5 end-to-end data analytics projects spanning retail, finance, inventory, and customer support domains</li>
-        <li>Built a stock price prediction model on 20 years of TCS trading data, achieving R²=0.996 using Random Forest</li>
-        <li>Conducted large-scale inventory analysis across 6 datasets (2.3M+ records) for a beverage distribution business</li>
-      </ul>
+<div class="resume-page" data-reveal>
+  <div class="resume-actions">
+    <a href="../assets/resume.pdf" class="btn-primary" download>Download Resume ↓</a>
+    <a href="../assets/resume.pdf" class="btn-ghost" target="_blank" rel="noreferrer">Open PDF ↗</a>
+  </div>
+  <div class="resume-preview">
+    <iframe src="../assets/resume.pdf" title="Utkarsh Somvanshi Resume"></iframe>
+    <div class="resume-fallback">
+      <p>Resume preview isn't available in this browser.<br>
+      <a href="../assets/resume.pdf" download>Download the PDF instead →</a></p>
     </div>
   </div>
-
-  <div class="resume-section" data-reveal>
-    <h2>Projects</h2>
-    <div class="r-projects">
-      <div class="r-proj"><h3>SafeVision AI</h3><p>Industrial safety compliance platform · YOLO, FastAPI, React</p></div>
-      <div class="r-proj"><h3>MoneyMind AI</h3><p>AI-powered personal finance advisor · React, FastAPI, Groq LLaMA</p></div>
-      <div class="r-proj"><h3>Mess Demand System</h3><p>Food waste ML pipeline · Python, Scikit-learn, XGBoost</p></div>
-      <div class="r-proj"><h3>FinAI</h3><p>Portfolio rebalancing engine · Python, FastAPI, Supabase</p></div>
-    </div>
-  </div>
-
-  <div class="resume-section" data-reveal>
-    <h2>Education</h2>
-    <div class="r-row">
-      <div class="r-row-head">
-        <h3>B.Tech, Computer Science Engineering (AI Major)</h3>
-        <span class="r-date">Sep 2024 — Sep 2028</span>
-      </div>
-      <p class="r-org">Vijaybhoomi University · Current CGPA: 7.8</p>
-    </div>
-  </div>
-
-  <div class="resume-section" data-reveal>
-    <h2>Certificates</h2>
-    <ul class="r-flat">
-      <li>Deloitte Australia — Data Analytics Job Simulation (Forage)</li>
-      <li>Tata — Data Visualisation: Empowering Business with Effective Insights (Forage)</li>
-    </ul>
-  </div>
-
-</section>
-
-<section class="cta-section" data-reveal>
-  <h2>Prefer the PDF?</h2>
-  <p>Same content, formatted for printing or attaching to an application.</p>
-  <a href="../assets/Utkarsh_Somvanshi_Resume.pdf" class="btn-primary" download>Download PDF ↓</a>
-</section>
+</div>
 
 <footer class="footer">
-  <p>Utkarsh Somvanshi — built from scratch, no template.</p>
+  <p>Utkarsh Somvanshi · © 2026</p>
   <div class="footer-links">
-    <a href="https://github.com/Utkarshsomvanshi45" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/utkarsh-somvanshi" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/utkarsh-somvanshi-b4837132b" target="_blank" rel="noreferrer">LinkedIn</a>
     <a href="mailto:somvanshiutkarsh7@gmail.com">Email</a>
   </div>
 </footer>
 
-<script src="../js/interactions.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

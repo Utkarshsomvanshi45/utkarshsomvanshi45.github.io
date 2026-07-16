@@ -8,185 +8,395 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body class="page-enter">
 <div class="grain"></div>
 
 <nav class="nav">
   <a href="../index.html" class="nav-logo">US<span class="dot">.</span></a>
   <div class="nav-links">
+    <a href="../index.html">Home</a>
     <a href="projects.html" class="active">Projects</a>
     <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
     <a href="resume.html">Resume</a>
     <a href="contact.html">Contact</a>
   </div>
-  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank">GitHub <i class="arrow">↗</i></a>
+  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank" rel="noreferrer">GitHub ↗</a>
 </nav>
 
-<header class="page-header">
-  <p class="eyebrow">Selected work</p>
-  <h1>Five systems. Five real problems.<br>No tutorials, no templates.</h1>
-  <p class="page-sub">Each one shipped end to end — data, model, backend, and a UI someone could actually use. Filter by what you're looking for.</p>
-
+<div class="page-header">
+  <div class="label">Projects</div>
+  <h1>Case studies,<br>not card grids.</h1>
+  <p class="page-sub">Each project is an engineering story — real problem, real solution, real architecture, and what I actually learned building it.</p>
   <div class="filter-bar">
     <button class="filter-chip active" data-filter="all">All</button>
-    <button class="filter-chip" data-filter="vision">Computer vision</button>
-    <button class="filter-chip" data-filter="ml">Machine learning</button>
-    <button class="filter-chip" data-filter="fullstack">Full-stack</button>
+    <button class="filter-chip" data-filter="cv">Computer Vision</button>
+    <button class="filter-chip" data-filter="ml">Machine Learning</button>
+    <button class="filter-chip" data-filter="fullstack">Full-Stack</button>
   </div>
-</header>
+</div>
 
-<section class="project-grid">
+<div class="project-list">
 
-  <article class="project-card" data-reveal id="safevision" data-tags="vision fullstack">
+  <!-- ===== SAFEVISION ===== -->
+  <div class="project-card" id="safevision" data-tags="cv fullstack" data-reveal>
     <div class="project-visual visual-safevision">
-      <div class="mini-box mb-1"><span>helmet · 0.97</span></div>
-      <div class="mini-box mb-2 alt"><span>person · 0.99</span></div>
+      <div class="det-box-large sv-b1"><span>helmet · 0.97</span></div>
+      <div class="det-box-large sv-b2"><span>person · 0.99</span></div>
     </div>
     <div class="project-body">
-      <p class="project-eyebrow">01 — Currently in production testing</p>
+      <p class="project-num">01 / Project <span class="project-status">In Production Testing</span></p>
       <h2>SafeVision AI</h2>
       <p class="project-tagline">Industrial safety compliance platform built to replace a paid vendor at AMNS.</p>
       <p class="project-desc">A computer-vision system monitoring 10+ live cameras for PPE compliance — helmets, vests, restricted-zone breaches, and crowd density — with automated alerts and a full compliance dashboard. Trained 4+ YOLO models reaching up to 97% mAP50. Built to give AMNS more control and configurability than their existing third-party vendor offered, at no recurring license cost.</p>
       <div class="project-stats">
-        <div><span>97%</span>mAP50</div>
-        <div><span>10+</span>cameras</div>
-        <div><span>5+</span>violation types</div>
+        <div class="stat-item"><span>97%</span>mAP50</div>
+        <div class="stat-item"><span>10+</span>AI cameras</div>
+        <div class="stat-item"><span>5+</span>violation types</div>
       </div>
       <div class="project-stack">
         <span>YOLO</span><span>FastAPI</span><span>PostgreSQL</span><span>React</span><span>WebSocket</span>
       </div>
     </div>
-  </article>
+  </div>
 
-  <article class="project-card" data-reveal id="moneymind" data-tags="ml fullstack">
-    <div class="project-visual visual-moneymind">
-      <div class="mm-card">Health Score<span>78/100</span></div>
-      <div class="mm-card mm-card-2">Tax Wizard<span>₹42,000 saved</span></div>
+  <!-- Case study detail -->
+  <div class="case-study" id="safevision-detail" data-reveal>
+    <div class="cs-section">
+      <div class="cs-label">Problem &amp; Solution</div>
+      <div class="cs-two-col">
+        <div class="cs-col">
+          <h3>Problem</h3>
+          <p>Industrial sites rely on manual supervision for PPE compliance and unsafe-behavior detection. This is slow, inconsistent, and impossible to scale across dozens of cameras and shifts. AMNS was paying recurring licensing costs to a third-party vendor (DARSA) for a system with limited functionality and no configurability.</p>
+        </div>
+        <div class="cs-col">
+          <h3>Solution</h3>
+          <p>An in-house computer vision safety platform across 10+ AI cameras, currently in final testing to replace the third-party vendor entirely. 4+ YOLO models trained, achieving up to 97% mAP50 and 95%+ average precision/recall across helmet, safety vest, and restricted-zone violation classes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-label">Architecture</div>
+      <div class="arch-box">
+        <div class="arch-row">
+          <div class="arch-node"><strong>RTSP Cameras</strong><span>10+ AI cameras</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>Ingest Workers</strong><span>Frame buffer · GPU</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>YOLO Models</strong><span>Helmet · Vest · Zone · Crowd</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>FastAPI Event Svc</strong><span>Detection events</span></div>
+        </div>
+        <div class="arch-divider"></div>
+        <div class="arch-row">
+          <div class="arch-node"><strong>Operator Dashboard</strong><span>React</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>WebSocket Hub</strong><span>Live alerts</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>PostgreSQL</strong><span>Events · Audit</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-label">Features</div>
+      <div class="features-list">
+        <div class="feat-item"><span class="feat-arrow">→</span><p>Real-time detection across 5+ violation types: missing helmet, missing safety jacket, work-at-height breaches, crowd density, restricted-zone entry</p></div>
+        <div class="feat-item"><span class="feat-arrow">→</span><p>WebSocket-based live alert delivery with annotated snapshot evidence to operator dashboard</p></div>
+        <div class="feat-item"><span class="feat-arrow">→</span><p>Full-stack platform covering dashboards, alerts, compliance tracking, live camera monitoring, and admin settings</p></div>
+        <div class="feat-item"><span class="feat-arrow">→</span><p>Broader admin control and configurability than the incumbent vendor solution</p></div>
+        <div class="feat-item"><span class="feat-arrow">→</span><p>JWT-authenticated multi-role access for operators, supervisors, and admins</p></div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cl-two-col">
+        <div class="cl-col">
+          <h3>Challenges</h3>
+          <div class="cl-list">
+            <div class="cl-item">Balancing detection latency vs accuracy across model sizes on limited GPU compute (Kaggle free-tier 2×T4)</div>
+            <div class="cl-item">Enforcing strict class balance and excluding the ambiguous "head" class to reduce false positives</div>
+            <div class="cl-item">Using overlap-ratio-based matching instead of IoU for small PPE bounding boxes</div>
+          </div>
+        </div>
+        <div class="cl-col">
+          <h3>Learnings</h3>
+          <div class="cl-list">
+            <div class="cl-item">Production CV is 20% model, 80% data pipeline and matching logic</div>
+            <div class="cl-item">Temporal consistency streaks reduce false positive alerts significantly</div>
+            <div class="cl-item">Operator UX matters as much as model accuracy — both need to work together</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-footer">
+      <p>Code is confidential — built for ArcelorMittal Nippon Steel India.</p>
+      <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+    </div>
+  </div>
+
+  <!-- ===== MONEYMIND ===== -->
+  <div class="project-card" id="moneymind" data-tags="ml fullstack" data-reveal>
+    <div class="project-visual">
+      <div class="mm-cards">
+        <div class="mm-card">Health Score<span>78 / 100</span></div>
+        <div class="mm-card">Tax Wizard<span style="color:#4FBE6B">₹42,000 saved</span></div>
+      </div>
     </div>
     <div class="project-body">
-      <p class="project-eyebrow">02 — Personal project</p>
+      <p class="project-num">02 / Project</p>
       <h2>MoneyMind AI</h2>
       <p class="project-tagline">A free, CA-level financial advisor for Indian investors.</p>
-      <p class="project-desc">Built solo — a financial guidance platform with a six-dimension Money Health Score, an Old-vs-New tax regime comparison engine, a Portfolio X-Ray computing true XIRR and fund overlap, and an LLM-powered chat advisor (Groq LLaMA 3.3 70B) for India-specific financial questions. Includes PDF parsing to auto-extract data from Form 16 and CAMS/KFintech statements.</p>
+      <p class="project-desc">Full-stack platform with a Money Health Score, Tax Wizard (Old vs. New regime), Portfolio X-Ray (XIRR, fund overlap, rebalancing), and an LLM-powered chat advisor using Groq LLaMA 3.3 70B. Auto-extracts data from Form 16 and CAMS/KFintech PDFs via PyMuPDF.</p>
       <div class="project-stats">
-        <div><span>6</span>health dimensions</div>
-        <div><span>5</span>core tools</div>
-        <div><span>70B</span>param LLM</div>
+        <div class="stat-item"><span>6</span>health dimensions</div>
+        <div class="stat-item"><span>5</span>core tools</div>
+        <div class="stat-item"><span>70B</span>param LLM</div>
       </div>
       <div class="project-stack">
-        <span>React</span><span>FastAPI</span><span>Groq LLaMA 3.3</span><span>PyMuPDF</span>
+        <span>React</span><span>FastAPI</span><span>Groq LLaMA 3.3</span><span>PyMuPDF</span><span>Supabase</span>
       </div>
     </div>
-  </article>
+  </div>
 
-  <article class="project-card" data-reveal id="messdemand" data-tags="ml">
-    <div class="project-visual visual-mess">
-      <svg viewBox="0 0 200 100" class="mess-chart">
-        <polyline points="0,80 30,60 60,65 90,30 120,40 150,15 180,25 200,10" fill="none" stroke="#FF7A1A" stroke-width="2.5"/>
-      </svg>
-      <p class="mess-label">Demand forecast — Random Forest</p>
-    </div>
-    <div class="project-body">
-      <p class="project-eyebrow">03 — Solving a real campus problem</p>
-      <h2>Mess Demand &amp; Food Waste System</h2>
-      <p class="project-tagline">Predicting food waste before it happens.</p>
-      <p class="project-desc">An ML pipeline predicting university mess demand (Low/Medium/High) to cut food over-preparation and shortages. Benchmarked 6 classification models, with Random Forest performing best. Built automated retraining on a 100-record threshold, data drift detection (PSI, Chi-Square, Mean Shift), full model versioning via a JSON registry, and dual dashboards (React + Streamlit) with cost-impact estimation.</p>
-      <div class="project-stats">
-        <div><span>6</span>models benchmarked</div>
-        <div><span>3</span>drift detection methods</div>
-        <div><span>2</span>dashboards</div>
-      </div>
-      <div class="project-stack">
-        <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>FastAPI</span><span>React</span>
+  <div class="case-study" data-reveal>
+    <div class="cs-section">
+      <div class="cs-label">Problem &amp; Solution</div>
+      <div class="cs-two-col">
+        <div class="cs-col">
+          <h3>Problem</h3>
+          <p>Most people can't afford CA-level financial guidance, and generic finance apps don't account for India-specific tax rules, fund overlaps, or personalized rebalancing advice.</p>
+        </div>
+        <div class="cs-col">
+          <h3>Solution</h3>
+          <p>A full-stack platform offering free CA-level guidance including a Money Health Score, Tax Wizard comparing Old vs. New regime, Portfolio X-Ray (XIRR, fund overlap, rebalancing), and an LLM chat advisor grounded in the user's actual financial data.</p>
+        </div>
       </div>
     </div>
-  </article>
 
-  <article class="project-card" data-reveal id="finai" data-tags="ml fullstack">
-    <div class="project-visual visual-finai">
-      <div class="finai-gauge">
-        <svg viewBox="0 0 100 60">
-          <path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
-          <path d="M10,55 A40,40 0 0,1 68,18" fill="none" stroke="#FF7A1A" stroke-width="8"/>
+    <div class="cs-section">
+      <div class="cs-label">Architecture</div>
+      <div class="arch-box">
+        <div class="arch-row">
+          <div class="arch-node"><strong>PDF Uploads</strong><span>Form 16 · CAMS</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>FastAPI Parser</strong><span>PyMuPDF</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>Supabase</strong><span>Financial data store</span></div>
+        </div>
+        <div class="arch-divider"></div>
+        <div class="arch-row">
+          <div class="arch-node"><strong>React Dashboard</strong><span>UI</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>Analysis Engine</strong><span>Tax · X-Ray · Score</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>Groq LLaMA 3.3 70B</strong><span>Chat advisor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cl-two-col">
+        <div class="cl-col">
+          <h3>Challenges</h3>
+          <div class="cl-list">
+            <div class="cl-item">Accurately parsing varied PDF formats from different fund houses and statement providers</div>
+            <div class="cl-item">Keeping LLM advice grounded in actual parsed financial data instead of generic suggestions</div>
+          </div>
+        </div>
+        <div class="cl-col">
+          <h3>Learnings</h3>
+          <div class="cl-list">
+            <div class="cl-item">Prompt grounding in real user data matters more than prompt complexity</div>
+            <div class="cl-item">PDF parsing for financial documents needs heavy validation — formats vary widely across providers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs-footer">
+      <p>Deployed on Render.</p>
+      <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">View GitHub ↗</a>
+    </div>
+  </div>
+
+  <!-- ===== MESS DEMAND ===== -->
+  <div class="project-card" id="messdemand" data-tags="ml" data-reveal>
+    <div class="project-visual">
+      <div class="mess-wrap">
+        <svg class="mess-chart" viewBox="0 0 200 80" preserveAspectRatio="none">
+          <polyline points="0,70 25,55 50,60 75,35 100,42 125,20 150,28 175,12 200,16" fill="none" stroke="#FF7A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="0,70 25,65 50,68 75,58 100,62 125,50 150,54 175,44 200,47" fill="none" stroke="rgba(255,122,26,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
         </svg>
-        <p>Rebalance Score: 64</p>
+        <p class="mess-label">Demand forecast — Random Forest</p>
+        <div class="mess-badges">
+          <span class="mess-badge best">RF ✓ best</span>
+          <span class="mess-badge">XGBoost</span>
+          <span class="mess-badge">LR</span>
+          <span class="mess-badge">+3 more</span>
+        </div>
       </div>
     </div>
     <div class="project-body">
-      <p class="project-eyebrow">04 — Personal project</p>
+      <p class="project-num">03 / Project</p>
+      <h2>Mess Demand & Food Waste System</h2>
+      <p class="project-tagline">Predicting food waste before it happens.</p>
+      <p class="project-desc">ML pipeline predicting university mess demand (Low/Medium/High) to cut food over-preparation and shortages. Benchmarked 6 classification models with Random Forest performing best. Built automated retraining on drift triggers, data drift detection (PSI, Chi-Square, Mean Shift), full model versioning, and dual dashboards.</p>
+      <div class="project-stats">
+        <div class="stat-item"><span>6</span>models benchmarked</div>
+        <div class="stat-item"><span>3</span>drift detectors</div>
+        <div class="stat-item"><span>2</span>dashboards</div>
+      </div>
+      <div class="project-stack">
+        <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>FastAPI</span><span>React</span><span>Streamlit</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-study" data-reveal>
+    <div class="cs-section">
+      <div class="cs-label">Problem &amp; Solution</div>
+      <div class="cs-two-col">
+        <div class="cs-col">
+          <h3>Problem</h3>
+          <p>University mess facilities over-prepare or under-prepare food due to lack of demand forecasting — leading to significant food waste, cost inefficiency, and student shortages.</p>
+        </div>
+        <div class="cs-col">
+          <h3>Solution</h3>
+          <p>An ML pipeline predicting mess demand (Low/Medium/High). Six models benchmarked, Random Forest selected as best. Includes automated retraining on drift detection, model versioning via JSON registry, and dual dashboards for different stakeholders.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-label">Architecture</div>
+      <div class="arch-box">
+        <div class="arch-row">
+          <div class="arch-node"><strong>Historical Data</strong><span>Mess records</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>Feature Engineering</strong><span>Preprocessing</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>6 Models Trained</strong><span>RF · XGB · LR · +3</span></div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node"><strong>Random Forest</strong><span>Selected as best</span></div>
+        </div>
+        <div class="arch-divider"></div>
+        <div class="arch-row">
+          <div class="arch-node"><strong>React Dashboard</strong><span>Operations team</span></div>
+          <span class="arch-arrow">+</span>
+          <div class="arch-node"><strong>Streamlit Dashboard</strong><span>Quick analysis</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>Drift Monitor</strong><span>PSI · Chi² · Mean Shift</span></div>
+          <span class="arch-arrow">←</span>
+          <div class="arch-node"><strong>FastAPI Service</strong><span>Predictions</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cl-two-col">
+        <div class="cl-col">
+          <h3>Challenges</h3>
+          <div class="cl-list">
+            <div class="cl-item">Detecting data drift early enough to trigger retraining before predictions degrade</div>
+            <div class="cl-item">Designing a food waste cost estimation model that operations staff would actually trust and use</div>
+          </div>
+        </div>
+        <div class="cl-col">
+          <h3>Learnings</h3>
+          <div class="cl-list">
+            <div class="cl-item">Automated retraining only matters if drift detection is reliable — false triggers erode trust</div>
+            <div class="cl-item">Solving a real observable problem made evaluation criteria much clearer than an abstract dataset</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs-footer">
+      <p>Campus project — Vijaybhoomi University.</p>
+      <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">View GitHub ↗</a>
+    </div>
+  </div>
+
+  <!-- ===== FINAI ===== -->
+  <div class="project-card" id="finai" data-tags="ml fullstack" data-reveal>
+    <div class="project-visual">
+      <div class="gauge-wrap">
+        <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 100 A80 80 0 0 1 180 100" stroke="rgba(255,255,255,0.08)" stroke-width="16" stroke-linecap="round"/>
+          <path d="M20 100 A80 80 0 0 1 180 100" stroke="#FF7A1A" stroke-width="16" stroke-linecap="round" stroke-dasharray="200 251" stroke-dashoffset="0"/>
+          <text x="100" y="90" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="28" fill="#FF7A1A" font-weight="500">64</text>
+          <text x="100" y="108" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(138,144,153,0.8)">REBALANCE SCORE</text>
+        </svg>
+        <p>Watch · Consider rebalancing</p>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-num">04 / Project</p>
       <h2>FinAI</h2>
       <p class="project-tagline">Mutual fund portfolio rebalancing, scored and explained.</p>
-      <p class="project-desc">A platform computing a real-time Rebalance Score (0–100) from a weighted 5-factor model — portfolio drift, volatility, risk alignment, tax efficiency, and market momentum — fed into a Bayesian decision engine that classifies portfolios into Hold/Watch/Rebalance/Urgent zones. Includes a fund recommendation engine with STCG/LTCG tax-zone detection and an interactive what-if allocation simulator.</p>
+      <p class="project-desc">Platform computing a real-time Rebalance Score (0–100) from a weighted 5-factor model — portfolio drift, volatility, risk alignment, tax efficiency, and market momentum — fed into a Bayesian decision engine. Includes a fund recommendation engine with STCG/LTCG tax-zone detection and an interactive what-if allocation simulator.</p>
       <div class="project-stats">
-        <div><span>5</span>factor model</div>
-        <div><span>4</span>decision zones</div>
-        <div><span>0–100</span>score range</div>
+        <div class="stat-item"><span>5</span>factor model</div>
+        <div class="stat-item"><span>4</span>decision zones</div>
+        <div class="stat-item"><span>0–100</span>score range</div>
       </div>
       <div class="project-stack">
-        <span>Python</span><span>FastAPI</span><span>React</span><span>Supabase</span>
+        <span>Python</span><span>FastAPI</span><span>React</span><span>Supabase</span><span>Bayesian ML</span>
       </div>
     </div>
-  </article>
+  </div>
 
-  <article class="project-card" data-reveal id="incident" data-tags="fullstack">
-    <div class="project-visual visual-incident">
-      <div class="inc-row"><span class="inc-dot red"></span>Reported</div>
-      <div class="inc-row"><span class="inc-dot amber"></span>In progress</div>
-      <div class="inc-row"><span class="inc-dot green"></span>Resolved</div>
-    </div>
-    <div class="project-body">
-      <p class="project-eyebrow">05 — Personal project</p>
-      <h2>Real-Time Incident Reporting System</h2>
-      <p class="project-tagline">A decoupled, deployed platform for tracking incidents as they happen.</p>
-      <p class="project-desc">Built the backend for a real-time incident reporting platform with role-based access — citizens report incidents, admins verify and track resolution. Designed REST APIs and a Supabase-backed data layer for incident creation, status updates, and verification. Deployed a fully decoupled frontend-backend architecture on Render, supporting concurrent users with persistent cloud storage.</p>
-      <div class="project-stats">
-        <div><span>2</span>user roles</div>
-        <div><span>3</span>status states</div>
-        <div><span>100%</span>deployed</div>
-      </div>
-      <div class="project-stack">
-        <span>Node.js</span><span>Express</span><span>React</span><span>Supabase</span><span>Render</span>
+  <div class="case-study" data-reveal>
+    <div class="cs-section">
+      <div class="cs-label">Problem &amp; Solution</div>
+      <div class="cs-two-col">
+        <div class="cs-col">
+          <h3>Problem</h3>
+          <p>Retail investors struggle to keep portfolios aligned with their risk profile as markets drift. Off-the-shelf tools are too simplistic or locked behind enterprise pricing.</p>
+        </div>
+        <div class="cs-col">
+          <h3>Solution</h3>
+          <p>A platform computing a real-time Rebalance Score using a weighted 5-factor model and Bayesian decision engine that classifies portfolios into Hold/Watch/Rebalance/Urgent zones with explainable rationale.</p>
+        </div>
       </div>
     </div>
-  </article>
 
-</section>
+    <div class="cs-section">
+      <div class="cl-two-col">
+        <div class="cl-col">
+          <h3>Challenges</h3>
+          <div class="cl-list">
+            <div class="cl-item">Modeling realistic transaction costs: spreads, taxes, lot tracking</div>
+            <div class="cl-item">Producing suggestions users can trust and reason about — not a black-box score</div>
+          </div>
+        </div>
+        <div class="cl-col">
+          <h3>Learnings</h3>
+          <div class="cl-list">
+            <div class="cl-item">In finance, explainability beats marginal accuracy — users need to understand the "why"</div>
+            <div class="cl-item">Clean data contracts between scoring and recommendation engines make systems far easier to extend</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs-footer">
+      <p>Personal project.</p>
+      <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">View GitHub ↗</a>
+    </div>
+  </div>
 
-<section class="cta-section" data-reveal>
-  <h2>Want the full picture?</h2>
-  <p>Every repo is public, commit history and all.</p>
-  <a href="https://github.com/Utkarshsomvanshi45" class="btn-primary" target="_blank">Browse GitHub</a>
-</section>
+</div><!-- end project-list -->
 
 <footer class="footer">
-  <p>Utkarsh Somvanshi — built from scratch, no template.</p>
+  <p>Utkarsh Somvanshi · © 2026</p>
   <div class="footer-links">
-    <a href="https://github.com/Utkarshsomvanshi45" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/utkarsh-somvanshi" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/utkarsh-somvanshi-b4837132b" target="_blank" rel="noreferrer">LinkedIn</a>
     <a href="mailto:somvanshiutkarsh7@gmail.com">Email</a>
   </div>
 </footer>
 
-<script>
-  const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.project-card');
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      const filter = chip.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.tags.includes(filter)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-
-<script src="../js/interactions.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

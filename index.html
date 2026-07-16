@@ -4,28 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Utkarsh Somvanshi — AI & Computer Vision Engineer</title>
+<meta name="description" content="Second-year CS student building AI systems and data products for real-world problems. Computer vision, ML, and full-stack development.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-enter">
 
 <div class="grain"></div>
 
 <nav class="nav">
   <a href="index.html" class="nav-logo">US<span class="dot">.</span></a>
   <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
     <a href="pages/projects.html">Projects</a>
     <a href="pages/about.html">About</a>
+    <a href="pages/experience.html">Experience</a>
     <a href="pages/resume.html">Resume</a>
     <a href="pages/contact.html">Contact</a>
   </div>
-  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank">GitHub <i class="arrow">↗</i></a>
+  <a href="https://github.com/Utkarshsomvanshi45" class="nav-cta" target="_blank" rel="noreferrer">GitHub ↗</a>
 </nav>
 
 <header class="hero">
   <div class="hero-feed">
-    <div class="feed-label"><span class="rec-dot"></span> SYSTEMS ONLINE</div>
+    <div class="feed-label"><span class="rec-dot"></span> Systems Online</div>
     <svg class="feed-grid" viewBox="0 0 800 500" preserveAspectRatio="none">
       <line x1="0" y1="125" x2="800" y2="125" stroke="rgba(255,255,255,0.04)"/>
       <line x1="0" y1="250" x2="800" y2="250" stroke="rgba(255,255,255,0.04)"/>
@@ -35,26 +38,29 @@
       <line x1="600" y1="0" x2="600" y2="500" stroke="rgba(255,255,255,0.04)"/>
     </svg>
 
+    <!-- Computer Vision panel -->
     <div class="panel panel-vision">
       <p class="panel-label">Computer vision</p>
-      <div class="mini-box mb-1"></div>
-      <div class="mini-box mb-2"></div>
+      <div class="det-box b1"><span>helmet · 0.97</span></div>
+      <div class="det-box b2"><span>person · 0.99</span></div>
       <p class="panel-stat">97% mAP50</p>
     </div>
 
+    <!-- ML panel -->
     <div class="panel panel-ml">
       <p class="panel-label">Predictive ML</p>
       <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
-        <polyline points="0,32 15,28 30,30 45,18 60,22 75,10 90,14 105,6 120,8" fill="none" stroke="#FF7A1A" stroke-width="2"/>
+        <polyline points="0,34 15,30 30,32 45,20 60,24 75,11 90,15 105,7 120,9" fill="none" stroke="#FF7A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <p class="panel-stat">R&sup2; = 0.996</p>
+      <p class="panel-stat">R² = 0.996</p>
     </div>
 
+    <!-- Stack panel -->
     <div class="panel panel-stack">
       <p class="panel-label">Full-stack</p>
-      <div class="stack-row"><span>FastAPI</span></div>
-      <div class="stack-row"><span>React</span></div>
-      <div class="stack-row"><span>PostgreSQL</span></div>
+      <div class="stack-row">FastAPI</div>
+      <div class="stack-row">React</div>
+      <div class="stack-row">PostgreSQL</div>
     </div>
   </div>
 
@@ -63,8 +69,10 @@
     <h1>I turn data into<br>systems people<br><span class="accent">actually use.</span></h1>
     <p class="hero-sub">Second-year CS student building across the AI stack — computer vision, predictive ML, and full-stack product engineering. Five shipped systems, one internship at ArcelorMittal Nippon Steel India, and a habit of finishing what I start.</p>
     <div class="hero-actions">
-      <a href="pages/projects.html" class="btn-primary">View projects</a>
-      <a href="pages/resume.html" class="btn-ghost">Resume ↗</a>
+      <a href="pages/projects.html" class="btn-primary">View projects →</a>
+      <a href="assets/resume.pdf" class="btn-ghost" download>Download Resume</a>
+      <a href="https://github.com/Utkarshsomvanshi45" class="btn-ghost" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/utkarsh-somvanshi-b4837132b" class="btn-ghost" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </div>
 </header>
@@ -89,29 +97,26 @@
 </section>
 
 <section class="featured" data-reveal>
-  <p class="section-eyebrow">Selected work</p>
-  <h2>Four systems, four real problems.</h2>
-
+  <p class="section-eyebrow">Selected Work</p>
+  <h2>Four systems. Four real problems.</h2>
   <div class="work-list">
-
     <a href="pages/projects.html#safevision" class="work-row" data-reveal>
       <div class="work-row-left">
-        <span class="work-index">SafeVision AI</span>
+        <p class="work-index">SafeVision AI</p>
         <h3>Industrial safety compliance, in real time</h3>
-        <p>YOLO-based PPE detection across 10+ cameras at AMNS — built to replace a paid third-party vendor.</p>
+        <p>YOLO-based PPE detection across 10+ cameras at AMNS — built to replace a paid third-party vendor. 97% mAP50.</p>
       </div>
       <div class="work-row-right">
-        <span class="work-tag">Computer vision</span>
+        <span class="work-tag">Computer Vision</span>
         <span class="work-tag">FastAPI</span>
         <span class="work-arrow">→</span>
       </div>
     </a>
-
-    <a href="pages/projects.html#moneymind" class="work-row" data-reveal>
+    <a href="pages/projects.html#moneymind" class="work-row" data-reveal data-reveal-delay="1">
       <div class="work-row-left">
-        <span class="work-index">MoneyMind AI</span>
-        <h3>A free, CA-level financial advisor</h3>
-        <p>LLM-powered finance tool with tax-regime comparison, portfolio X-ray, and Form 16 parsing.</p>
+        <p class="work-index">MoneyMind AI</p>
+        <h3>A free, CA-level personal finance advisor</h3>
+        <p>LLM-powered finance platform with tax-regime comparison, portfolio X-ray, and Form 16 PDF parsing.</p>
       </div>
       <div class="work-row-right">
         <span class="work-tag">LLM</span>
@@ -119,12 +124,11 @@
         <span class="work-arrow">→</span>
       </div>
     </a>
-
-    <a href="pages/projects.html#messdemand" class="work-row" data-reveal>
+    <a href="pages/projects.html#messdemand" class="work-row" data-reveal data-reveal-delay="2">
       <div class="work-row-left">
-        <span class="work-index">Mess Demand System</span>
+        <p class="work-index">Mess Demand System</p>
         <h3>Predicting food waste before it happens</h3>
-        <p>An ML pipeline with drift detection and auto-retraining, solving a real problem on campus.</p>
+        <p>ML pipeline with drift detection and automated retraining — solving a real cost problem on campus.</p>
       </div>
       <div class="work-row-right">
         <span class="work-tag">MLOps</span>
@@ -132,12 +136,11 @@
         <span class="work-arrow">→</span>
       </div>
     </a>
-
-    <a href="pages/projects.html#finai" class="work-row" data-reveal>
+    <a href="pages/projects.html#finai" class="work-row" data-reveal data-reveal-delay="3">
       <div class="work-row-left">
-        <span class="work-index">FinAI</span>
+        <p class="work-index">FinAI</p>
         <h3>Portfolio rebalancing, scored and explained</h3>
-        <p>A Bayesian decision engine that tells investors when — and why — to rebalance.</p>
+        <p>Bayesian decision engine that tells investors when — and why — to rebalance their mutual fund portfolio.</p>
       </div>
       <div class="work-row-right">
         <span class="work-tag">Bayesian ML</span>
@@ -145,25 +148,31 @@
         <span class="work-arrow">→</span>
       </div>
     </a>
-
   </div>
 </section>
 
 <section class="cta-section" data-reveal>
-  <h2>Open to internship and full-time roles.</h2>
-  <p>Studying AI at Vijaybhoomi University, building production systems on the side.</p>
-  <a href="pages/contact.html" class="btn-primary">Get in touch</a>
+  <div class="cta-inner">
+    <div>
+      <h2>Have a problem worth solving with AI?</h2>
+      <p>I'm open to internships, research collaborations, and engineering challenges. Usually reply within a day.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="pages/contact.html" class="btn-primary">Get in touch →</a>
+      <a href="pages/projects.html" class="btn-ghost">See work</a>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
-  <p>Utkarsh Somvanshi — built from scratch, no template.</p>
+  <p>Utkarsh Somvanshi · © 2026</p>
   <div class="footer-links">
-    <a href="https://github.com/Utkarshsomvanshi45" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/utkarsh-somvanshi" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Utkarshsomvanshi45" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/utkarsh-somvanshi-b4837132b" target="_blank" rel="noreferrer">LinkedIn</a>
     <a href="mailto:somvanshiutkarsh7@gmail.com">Email</a>
   </div>
 </footer>
 
-<script src="js/interactions.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
