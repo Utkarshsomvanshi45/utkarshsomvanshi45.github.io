@@ -86,17 +86,43 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="../js/main.js"></script>
 <script>
+emailjs.init('o1OIYw0UQuD_4ZPvb');
+
 function handleFormSubmit() {
   const name = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
   const message = document.getElementById('f-message').value.trim();
+
   if (!name || !email || !message) {
     alert('Please fill in all fields.');
     return;
   }
-  document.getElementById('form-sent').style.display = 'block';
+
+  const btn = document.querySelector('.contact-form-wrap .btn-primary');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  emailjs.send('service_portfolio', 'template_28h2yvx', {
+    from_name: name,
+    email: email,
+    name: name,
+    message: message,
+  }).then(() => {
+    document.getElementById('form-sent').style.display = 'block';
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+    document.getElementById('f-name').value = '';
+    document.getElementById('f-email').value = '';
+    document.getElementById('f-message').value = '';
+  }).catch((error) => {
+    alert('Something went wrong. Please email me directly at somvanshiutkarsh7@gmail.com');
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+    console.error('EmailJS error:', error);
+  });
 }
 </script>
 </body>
